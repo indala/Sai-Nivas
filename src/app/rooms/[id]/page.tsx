@@ -5,18 +5,17 @@ import { Container, Button } from 'react-bootstrap';
 import Link from 'next/link';
 import RoomDetailsClient from './RoomDetailsClient';
 
+// Update the interface to account for the params object possibly being a Promise in Next.js 15
 interface RoomPageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-// Optional: remove generateStaticParams if dynamic rendering is enough
-// export const generateStaticParams = async () => {
-//   return rooms.map((room) => ({ id: room.id.toLowerCase() }));
-// };
+export default async function RoomPage({ params }: RoomPageProps) {
+  // Await the params object to get its final value
+  const { id } = await params;
 
-export default function RoomPage({ params }: RoomPageProps) {
   const room: Room | undefined = rooms.find(
-    (r) => r.id.toLowerCase() === params.id.toLowerCase()
+    (r) => r.id.toLowerCase() === id.toLowerCase()
   );
 
   if (!room) {
