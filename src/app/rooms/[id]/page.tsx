@@ -1,5 +1,5 @@
 // app/rooms/[id]/page.tsx
-export const runtime = 'edge'; 
+
 import { rooms, Room } from '@/data/rooms';
 import { Container, Button } from 'react-bootstrap';
 import Link from 'next/link';
