@@ -19,8 +19,8 @@ export default function ContactPage() {
   };
 
   const motionCard = {
-    whileHover: { scale: 1.03, boxShadow: '0 8px 20px rgba(0,0,0,0.15)' },
-    whileTap: { scale: 0.95 },
+    whileHover: { scale: 1.02, boxShadow: '0 8px 20px rgba(0,0,0,0.15)' },
+    whileTap: { scale: 0.97 },
   };
 
   return (
@@ -43,11 +43,12 @@ export default function ContactPage() {
                 variants={cardVariants}
                 whileHover={motionCard.whileHover}
                 whileTap={motionCard.whileTap}
-                style={{ textDecoration: 'none', display: 'block' }}
+                style={{ textDecoration: 'none', display: 'block' ,borderRadius: '10px', cursor: 'pointer'}}
+                className='shadow-sm m-2'
               >
                 <Card
-                  className="p-3 shadow-sm d-flex align-items-center flex-row"
-                  style={{ borderRadius: '10px', cursor: 'pointer' }}
+                  className="p-3  d-flex align-items-center flex-row "
+                  style={{  }}
                 >
                   {/* Icon */}
                   <div

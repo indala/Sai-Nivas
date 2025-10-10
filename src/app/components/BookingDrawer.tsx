@@ -120,6 +120,7 @@ export default function BookingDrawer({ show, onClose, room }: Props) {
               zIndex: 1000,
               overflowY: 'auto',
               padding: '2rem',
+              paddingBottom: '7rem',
               display: 'flex',
               flexDirection: 'column',
             }}

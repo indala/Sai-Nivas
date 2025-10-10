@@ -46,18 +46,18 @@ export default function Footer() {
                 { href: '/gallery', label: 'Gallery' },
                 { href: '/contact', label: 'Contact' },
               ].map((link, idx) => (
-                <Nav.Item key={idx} style={{ marginBottom: '0.4rem' }}>
-                  <Link
-                    href={link.href}
-                    className="text-decoration-none"
-                    style={{
-                      color: '#ccc',
-                      transition: 'color 0.3s ease',
-                    }}
-                  >
-                    {link.label}
-                  </Link>
-                </Nav.Item>
+                <Nav.Link
+                  key={idx}
+                  as={Link}
+                  href={link.href}
+                  style={{
+                    color: '#ccc',
+                    marginBottom: '0.4rem',
+                    transition: 'color 0.3s ease',
+                  }}
+                >
+                  {link.label}
+                </Nav.Link>
               ))}
             </Nav>
           </Col>
@@ -74,28 +74,50 @@ export default function Footer() {
                 color: '#ddd',
               }}
             >
+              {/* Address */}
               <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                 <HiLocationMarker size={18} style={{ marginRight: '8px', color: '#20c997' }} />
-                Near Seashore, 5th Floor Apartment
+                <a
+                  href="https://www.google.com/maps?q=Near+Seashore,+5th+Floor+Apartment"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#ddd', textDecoration: 'none' }}
+                >
+                  Near Seashore, 5th Floor Apartment
+                </a>
               </li>
+
+              {/* Phone */}
               <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                 <FaPhoneAlt size={16} style={{ marginRight: '8px', color: '#20c997' }} />
-                +91 98765 43210
+                <a
+                  href="tel:+919876543210"
+                  style={{ color: '#ddd', textDecoration: 'none' }}
+                >
+                  +91 98765 43210
+                </a>
               </li>
+
+              {/* Email */}
               <li style={{ display: 'flex', alignItems: 'center' }}>
                 <FaEnvelope size={16} style={{ marginRight: '8px', color: '#20c997' }} />
-                sainivasguesthouse@gmail.com
+                <a
+                  href="mailto:sainivasguesthouse@gmail.com"
+                  style={{ color: '#ddd', textDecoration: 'none' }}
+                >
+                  sainivasguesthouse@gmail.com
+                </a>
               </li>
             </ul>
 
             {/* Social Icons */}
             <div className="mt-3" style={{ display: 'flex', gap: '1rem' }}>
-              <Link href="#" aria-label="Facebook">
-                <FaFacebook color="#20c997" size={22} />
-              </Link>
-              <Link href="#" aria-label="Instagram">
-                <FaInstagram color="#20c997" size={22} />
-              </Link>
+              <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer" style={{ transition: 'color 0.3s ease' }}>
+                <FaFacebook color="#20c997" size={22} className="hover-green" />
+              </a>
+              <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer" style={{ transition: 'color 0.3s ease' }}>
+                <FaInstagram color="#20c997" size={22} className="hover-green" />
+              </a>
             </div>
           </Col>
         </Row>
@@ -114,7 +136,13 @@ export default function Footer() {
           Designed with ❤️ by <span style={{ color: '#20c997' }}>Mohan Kumar Indala</span>
         </motion.div>
       </Container>
+
+      {/* Optional: Hover effect for social icons */}
+      <style jsx>{`
+        .hover-green:hover {
+          color: #10b981 !important;
+        }
+      `}</style>
     </motion.footer>
   );
 }
-    

@@ -57,7 +57,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ id, title, description, image, pric
               <Button  variant="success" size="sm">View Details</Button>
             </Link>
           </motion.div>
-        </div>c
+        </div>
       </Card.Body>
     </Card>
   );

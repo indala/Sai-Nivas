@@ -9,7 +9,7 @@ import MapSection from './components/MapSection';
 
 export default function Home() {
   return (
-    <div style={{ fontFamily: 'Poppins, sans-serif' }}>
+    <div style={{ fontFamily: 'Poppins, sans-serif' }} className='mt-3c'>
       <HeroSection />
       <AboutSection />
       <AmenitiesSection />

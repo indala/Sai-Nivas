@@ -20,7 +20,6 @@ export default function AppNavbar() {
     { name: 'Contact', path: '/contact' },
   ];
 
-  // Framer Motion variants
   const navbarVariants: Variants = {
     hidden: { y: -50, opacity: 0 },
     visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } },
@@ -36,12 +35,10 @@ export default function AppNavbar() {
       <motion.div initial="hidden" animate="visible" variants={navbarVariants}>
         <Navbar expanded={expanded} expand="lg" bg="light" fixed="top" className="shadow-sm">
           <Container>
-            {/* Logo */}
             <Navbar.Brand as={Link} href="/" className="fw-bold fs-4">
               GuestHouse
             </Navbar.Brand>
 
-            {/* Hamburger for mobile */}
             <Navbar.Toggle
               aria-controls="offcanvasNavbar"
               onClick={() => setExpanded(!expanded)}
@@ -51,6 +48,7 @@ export default function AppNavbar() {
               id="offcanvasNavbar"
               aria-labelledby="offcanvasNavbarLabel"
               placement="end"
+              className="custom-offcanvas"
             >
               <Offcanvas.Header closeButton onHide={() => setExpanded(false)}>
                 <Offcanvas.Title id="offcanvasNavbarLabel">Menu</Offcanvas.Title>
@@ -76,11 +74,7 @@ export default function AppNavbar() {
                   ))}
                 </Nav>
 
-                {/* Book Now Button */}
-                <motion.div
-                  className="mt-3 mt-lg-0"
-                  {...linkMotion}
-                >
+                <motion.div className="mt-3 mt-lg-0" {...linkMotion}>
                   <Button
                     variant="success"
                     onClick={() => {
@@ -100,6 +94,22 @@ export default function AppNavbar() {
 
       {/* Booking Drawer */}
       <BookingDrawer show={showBooking} onClose={() => setShowBooking(false)} />
+
+      {/* Inline styling for smooth animation + blur */}
+      <style jsx global>{`
+        .custom-offcanvas.offcanvas {
+          transition: transform 0.6s ease-in-out !important;
+          backdrop-filter: blur(10px);
+          width: 70% !important;
+          background: rgba(255, 255, 255, 0.75);
+        }
+
+        .offcanvas-backdrop.show {
+          backdrop-filter: blur(5px);
+          background-color: rgba(0, 0, 0, 0.3) !important;
+          transition: backdrop-filter 0.4s ease, background-color 0.4s ease;
+        }
+      `}</style>
     </>
   );
 }
