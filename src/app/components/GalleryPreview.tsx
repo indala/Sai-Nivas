@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const galleryImages = ['room1.jpg', 'room2.jpg', 'room3.jpg'];
+const galleryImages = ['room1.webp', 'room2.webp', 'room3.webp'];
 
 export default function GalleryPreview() {
   return (

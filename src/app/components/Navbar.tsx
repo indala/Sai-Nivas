@@ -30,6 +30,9 @@ export default function AppNavbar() {
     whileTap: { scale: 0.9 },
   };
 
+  // Show floating button only on pages other than individual room pages
+  const showFloatingBooking = !(pathname.startsWith('/rooms/') && pathname !== '/rooms');
+
   return (
     <>
       <motion.div initial="hidden" animate="visible" variants={navbarVariants}>
@@ -95,6 +98,25 @@ export default function AppNavbar() {
       {/* Booking Drawer */}
       <BookingDrawer show={showBooking} onClose={() => setShowBooking(false)} />
 
+      {/* Floating Book Now Button for Mobile / Tablet */}
+      {showFloatingBooking && (
+        <motion.div
+          className="d-lg-none floating-booking"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+          style={{ zIndex: 1050 }}
+        >
+          <Button
+            variant="success"
+            onClick={() => setShowBooking(true)}
+            style={{ borderRadius: '50px', padding: '0.6rem 1rem', fontWeight: 600 }}
+          >
+            Book Now
+          </Button>
+        </motion.div>
+      )}
+
       {/* Inline styling for smooth animation + blur */}
       <style jsx global>{`
         .custom-offcanvas.offcanvas {
@@ -108,6 +130,17 @@ export default function AppNavbar() {
           backdrop-filter: blur(5px);
           background-color: rgba(0, 0, 0, 0.3) !important;
           transition: backdrop-filter 0.4s ease, background-color 0.4s ease;
+        }
+
+        .floating-booking {
+          position: fixed;
+          bottom: 1rem;
+          z-index: 1040;
+          right: 1rem;
+        }
+
+        .floating-booking button {
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
       `}</style>
     </>

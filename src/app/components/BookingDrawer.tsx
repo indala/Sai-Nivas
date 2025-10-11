@@ -117,7 +117,7 @@ export default function BookingDrawer({ show, onClose, room }: Props) {
               backgroundColor: '#fff',
               borderRadius: '0 0 0 10px',
               boxShadow: '-4px 0 20px rgba(0,0,0,0.2)',
-              zIndex: 1000,
+              zIndex:1060,
               overflowY: 'auto',
               padding: '2rem',
               paddingBottom: '7rem',

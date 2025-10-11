@@ -91,10 +91,10 @@ export default function Footer() {
               <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                 <FaPhoneAlt size={16} style={{ marginRight: '8px', color: '#20c997' }} />
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919553355118"
                   style={{ color: '#ddd', textDecoration: 'none' }}
                 >
-                  +91 98765 43210
+                  +91 95533 55118
                 </a>
               </li>
 
@@ -112,10 +112,10 @@ export default function Footer() {
 
             {/* Social Icons */}
             <div className="mt-3" style={{ display: 'flex', gap: '1rem' }}>
-              <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer" style={{ transition: 'color 0.3s ease' }}>
+              <a href="" aria-label="Facebook" target="_blank" rel="noopener noreferrer" style={{ transition: 'color 0.3s ease' }}>
                 <FaFacebook color="#20c997" size={22} className="hover-green" />
               </a>
-              <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer" style={{ transition: 'color 0.3s ease' }}>
+              <a href="https://www.instagram.com/sai_nivas_rest_house/" aria-label="Instagram" target="_blank" rel="noopener noreferrer" style={{ transition: 'color 0.3s ease' }}>
                 <FaInstagram color="#20c997" size={22} className="hover-green" />
               </a>
             </div>

@@ -1,46 +1,65 @@
 // src/data/rooms.ts
+
 export interface Room {
   id: string;
   title: string;
   description: string;
   image: string;
   price: number;
+  bedType: 'Single Bed' | 'Double Bed'; // each room has a bed type
+  services: string[];    // Amenities like AC, TV, WiFi
+  nearby?: string[];     // Optional nearby attractions
 }
 
 export const rooms: Room[] = [
   {
-    id: 'deluxe',
-    title: 'Deluxe Room',
-    description: 'Spacious room with modern amenities, queen-sized bed, and a balcony view.',
-    image: '/images/room1.jpg',
+    id: 'double1',
+    title: 'Double Bed Room 1',
+    description: 'Spacious double bed room with AC, TV, and beach view.',
+    image: '/images/room1.webp',
     price: 2500,
+    bedType: 'Double Bed',
+    services: ['AC', 'TV', 'WiFi', 'Water Supply', 'Water Heater', 'Drinking Water'],
+    nearby: ['Beach', 'Bar'],
   },
   {
-    id: 'executive',
-    title: 'Executive Suite',
-    description: 'Luxury suite with separate living area, king-sized bed, and premium facilities.',
-    image: '/images/room2.jpg',
-    price: 4500,
+    id: 'double2',
+    title: 'Double Bed Room 2',
+    description: 'Comfortable double bed room with modern amenities and beach view.',
+    image: '/images/room2.webp',
+    price: 2500,
+    bedType: 'Double Bed',
+    services: ['AC', 'TV', 'WiFi', 'Water Supply', 'Water Heater', 'Drinking Water'],
+    nearby: ['Beach', 'Bar'],
   },
   {
-    id: 'Standard',
-    title: 'Standard Room',
-    description: 'Comfortable room with all basic amenities, ideal for short stays.',
-    image: '/images/room3.jpg',
+    id: 'single1',
+    title: 'Single Bed Room 1',
+    description: 'Cozy single bed room with AC, TV, and essential services.',
+    image: '/images/room3.webp',
     price: 1800,
+    bedType: 'Single Bed',
+    services: ['AC', 'TV', 'WiFi', 'Water Supply', 'Water Heater', 'Drinking Water'],
+    nearby: ['Beach', 'Bar'],
   },
   {
-    id: 'Family',
-    title: 'Family Room',
-    description: 'Spacious room perfect for families, includes two beds and a small seating area.',
-    image: '/images/room4.jpg',
-    price: 3200,
+    id: 'single2',
+    title: 'Single Bed Room 2',
+    description: 'Comfortable single bed room with all basic amenities.',
+    image: '/images/room4.webp',
+    price: 1800,
+    bedType: 'Single Bed',
+    services: ['AC', 'TV', 'WiFi', 'Water Supply', 'Water Heater', 'Drinking Water'],
+    nearby: ['Beach', 'Bar'],
   },
   {
-    id: 'Presidential',
-    title: 'Presidential Suite',
-    description: 'Top-tier suite with premium furnishings, private balcony, and luxury amenities.',
-    image: '/images/room5.jpg',
-    price: 7500,
+    id: 'single3',
+    title: 'Single Bed Room 3',
+    description: 'Single bed room with AC, TV, and beach view.',
+    image: '/images/room5.webp',
+    price: 1800,
+    bedType: 'Single Bed',
+    services: ['AC', 'TV', 'WiFi', 'Water Supply', 'Water Heater', 'Drinking Water'],
+    nearby: ['Beach', 'Bar'],
   },
 ];

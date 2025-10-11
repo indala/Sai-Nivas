@@ -1,13 +1,17 @@
 'use client';
 
 import { Room } from '@/data/rooms';
-import { Container, Button } from 'react-bootstrap';
-import { motion } from 'framer-motion';
+import { Container, Button, Row, Col, Badge, Card } from 'react-bootstrap';
+import { motion ,Variants} from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import React, { useState } from 'react';
+// These two imports are correct and necessary for the features
 import EnquiryForm from '../../components/EnquiryForm';
 import BookingDrawer from '../../components/BookingDrawer';
+
+import { FaTv, FaWifi, FaSnowflake, FaShower, FaBed, FaDollarSign,FaTint ,FaFire  } from 'react-icons/fa';
+import { MdBeachAccess, MdLocalBar, MdOutlineKingBed } from 'react-icons/md';
 
 interface Props {
   room: Room;
@@ -15,7 +19,7 @@ interface Props {
 
 export default function RoomDetailsClient({ room }: Props) {
   const router = useRouter();
-
+  // State variables for showing/hiding the features (ALREADY CORRECT)
   const [showBooking, setShowBooking] = useState(false);
   const [showEnquiry, setShowEnquiry] = useState(false);
 
@@ -24,62 +28,193 @@ export default function RoomDetailsClient({ room }: Props) {
     else router.push('/rooms');
   };
 
+  const serviceIcons: Record<string, React.ReactNode> = {
+    AC: <FaSnowflake />,
+    TV: <FaTv />,
+    WiFi: <FaWifi />,
+    'Water Heater': <FaFire  />,
+    'Water Supply': <FaShower />,
+    'Double Bed': <FaBed />,
+    'Single Bed': <FaBed />,
+    'King Bed': <MdOutlineKingBed />,
+    'Drinking Water': <FaTint />,
+  };
+
+  const nearbyIcons: Record<string, React.ReactNode> = {
+    Beach: <MdBeachAccess />,
+    Bar: <MdLocalBar />,
+  };
+
+  // ✨ Animation Variants
+  const fadeUp:Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (delay = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay, duration: 0.6, ease: 'easeOut' },
+    }),
+  };
+
+  const fadeCard :Variants= {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: (delay = 0) => ({
+      opacity: 1,
+      scale: 1,
+      transition: { delay, duration: 0.5 },
+    }),
+  };
+
   return (
     <>
+      {/* 🌅 Page Wrapper */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        style={{ minHeight: '100vh', paddingTop: '6rem', paddingBottom: '2rem', backgroundColor: '#f8f9fa' }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        style={{ minHeight: '100vh', backgroundColor: '#f8f9fa' }}
       >
-        <Container style={{ maxWidth: '800px' }}>
-          <Button variant="success" className="mb-4" onClick={handleBack}>
-            ← Back to Rooms
-          </Button>
+        {/* 🏖 Hero Section */}
+        <motion.div
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.9, ease: 'easeOut' }}
+          style={{ position: 'relative', width: '100%', height: '400px' }}
+        >
+          <Image src={room.image} alt={room.title} fill style={{ objectFit: 'cover' }} priority />
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              background: 'linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.1))',
+            }}
+          />
+        </motion.div>
 
-          <motion.h1 className="mb-3" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            {room.title}
-          </motion.h1>
+        {/* 🧾 Main Content */}
+        <Container className="mt-5" style={{ maxWidth: '1100px', paddingBottom: '3rem' }}>
+          <Row className="justify-content-center">
+            <Col lg={10}>
+              <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+                <Button variant="success" className="mb-4" onClick={handleBack}>
+                  ← Back to Rooms
+                </Button>
+              </motion.div>
 
-          <motion.div className="mb-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            <Image
-              src={room.image}
-              alt={room.title}
-              width={800}
-              height={400}
-              className="img-fluid rounded"
-              style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
-            />
-          </motion.div>
+              <motion.h1
+                className="mb-3 fw-bold"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                custom={0.2}
+                viewport={{ once: true }}
+              >
+                {room.title}
+              </motion.h1>
 
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            {room.description}
-          </motion.p>
+              <motion.p
+                className="lead text-muted"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                custom={0.3}
+                viewport={{ once: true }}
+              >
+                {room.description}
+              </motion.p>
 
-          <motion.h4 className="mt-3 mb-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            Price: ₹{room.price} / night
-          </motion.h4>
+              <Row className="my-4 g-4 align-items-stretch">
+                {/* 💰 Price Card */}
+                <Col md={4} sm={12}>
+                  <motion.div variants={fadeCard} initial="hidden" whileInView="visible" custom={0.4} viewport={{ once: true }}>
+                    <Card className="text-center shadow-sm h-100 border-success">
+                      <Card.Body>
+                        <FaDollarSign size={28} className="text-success mb-3" />
+                        <Card.Title className="text-success fw-bold fs-5">Price</Card.Title>
+                        <Card.Text className="display-6 fw-bold">
+                          ₹{room.price}
+                          <span className="fs-6 text-muted"> / night</span>
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </motion.div>
+                </Col>
 
-          {/* Buttons */}
-          <div className="d-flex gap-3">
-            <Button variant="success" onClick={() => setShowBooking(true)}>
-              Book Now
-            </Button>
-            <Button variant="primary" onClick={() => setShowEnquiry(true)}>
-              Send Enquiry
-            </Button>
-          </div>
+                {/* 🏡 Services & Nearby */}
+                <Col md={8} sm={12}>
+                  <motion.div variants={fadeCard} initial="hidden" whileInView="visible" custom={0.5} viewport={{ once: true }}>
+                    <Card className="shadow-sm h-100 border-0">
+                      <Card.Body>
+                        <h5 className="text-secondary mb-3">Bed Type</h5>
+                        <Badge bg="info" className="me-2 p-2" style={{ fontSize: '1rem' }}>
+                          {serviceIcons[room.bedType]} {room.bedType}
+                        </Badge>
+
+                        <Row className="mt-4">
+                          <Col sm={6}>
+                            <h6 className="text-dark">Amenities:</h6>
+                            <div className="d-flex flex-wrap gap-2">
+                              {room.services.map((service) => (
+                                <Badge bg="success" key={service} className="p-2" style={{ fontSize: '0.9rem' }}>
+                                  {serviceIcons[service]} {service}
+                                </Badge>
+                              ))}
+                            </div>
+                          </Col>
+                          {room.nearby && (
+                            <Col sm={6}>
+                              <h6 className="text-dark">Nearby:</h6>
+                              <div className="d-flex flex-wrap gap-2">
+                                {room.nearby.map((place) => (
+                                  <Badge bg="warning" key={place} className="p-2" style={{ fontSize: '0.9rem', color: '#000' }}>
+                                    {nearbyIcons[place]} {place}
+                                  </Badge>
+                                ))}
+                              </div>
+                            </Col>
+                          )}
+                        </Row>
+                      </Card.Body>
+                    </Card>
+                  </motion.div>
+                </Col>
+              </Row>
+
+              {/* ✉️ Buttons - ADDING CLICK HANDLERS */}
+              <motion.div
+                className="d-flex gap-3 mt-4"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                custom={0.6}
+                viewport={{ once: true }}
+              >
+                <motion.div whileHover={{ scale: 1.05 }}>
+                  <Button variant="success" onClick={() => setShowBooking(true)}>
+                    Book Now
+                  </Button>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }}>
+                  <Button variant="primary" onClick={() => setShowEnquiry(true)}>
+                    Send Enquiry
+                  </Button>
+                </motion.div>
+              </motion.div>
+            </Col>
+          </Row>
         </Container>
       </motion.div>
 
-      {/* Booking Drawer */}
-      <BookingDrawer
-        show={showBooking}
-        onClose={() => setShowBooking(false)}
-        room={room.title}
-      />
+      {/* ========================================= */}
+      {/* ADDED FEATURES START HERE */}
+      {/* ========================================= */}
 
-      {/* Enquiry Drawer */}
+      {/* 📅 Booking Drawer */}
+      <BookingDrawer show={showBooking} onClose={() => setShowBooking(false)} room={room.title} />
+
+      {/* 📧 Enquiry Drawer (Motion Block) */}
       {showEnquiry && (
         <motion.div
           initial={{ x: '100%' }}
@@ -88,14 +223,14 @@ export default function RoomDetailsClient({ room }: Props) {
           transition={{ type: 'tween', duration: 0.4 }}
           style={{
             position: 'fixed',
-            top: 100,
+            top: 100, // Adjusted top for the new layout (assuming header is 100px)
             right: 0,
-            height: '84vh',
+            height: '84vh', // Adjusted height
             width: '100%',
             maxWidth: '400px',
             backgroundColor: '#fff',
             boxShadow: '-4px 0 12px rgba(0,0,0,0.2)',
-            zIndex: 1000,
+            zIndex: 1050,
             overflowY: 'auto',
             padding: '2rem',
           }}
@@ -107,7 +242,7 @@ export default function RoomDetailsClient({ room }: Props) {
         </motion.div>
       )}
 
-      {/* Overlay */}
+      {/* 🌫 Overlay */}
       {(showBooking || showEnquiry) && (
         <div
           onClick={() => {
@@ -125,6 +260,10 @@ export default function RoomDetailsClient({ room }: Props) {
           }}
         />
       )}
+
+      {/* ========================================= */}
+      {/* ADDED FEATURES END HERE */}
+      {/* ========================================= */}
     </>
   );
 }

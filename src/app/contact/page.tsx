@@ -8,8 +8,8 @@ import MapSection from '../components/MapSection';
 
 export default function ContactPage() {
   const contactCards = [
-    { icon: <BsWhatsapp size={30} />, label: 'WhatsApp', value: '+917780123277', href: 'https://wa.me/917780123277', color: '#25D366' },
-    { icon: <BsTelephone size={30} />, label: 'Phone', value: '+917780123277', href: 'tel:+917780123277', color: '#0d6efd' },
+    { icon: <BsWhatsapp size={30} />, label: 'WhatsApp', value: '+919553355118', href: 'https://wa.me/917780123277', color: '#25D366' },
+    { icon: <BsTelephone size={30} />, label: 'Phone', value: '+919553355118', href: 'tel:+917780123277', color: '#0d6efd' },
     { icon: <BsEnvelope size={30} />, label: 'Email', value: 'sainivasbeachviewresthouse@gmail.com', href: 'mailto:sainivasbeachviewresthouse@gmail.com', color: '#dc3545' },
   ];
 
@@ -69,9 +69,9 @@ export default function ContactPage() {
                   </div>
 
                   {/* Label + Value */}
-                  <div>
-                    <h6 className="mb-1">{card.label}</h6>
-                    <span style={{ color: '#333', fontWeight: 500 }}>{card.value}</span>
+                  <div className='d-flex flex-column flex-grow-1 text-truncate'> 
+                    <h6 className="mb-1 text-truncate">{card.label}</h6>
+                    <span className='text-truncate' style={{ color: '#333', fontWeight: 500}}>{card.value}</span>
                   </div>
                 </Card>
               </motion.a>
