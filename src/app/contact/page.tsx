@@ -10,7 +10,7 @@ export default function ContactPage() {
   const contactCards = [
     { icon: <BsWhatsapp size={30} />, label: 'WhatsApp', value: '+917780123277', href: 'https://wa.me/917780123277', color: '#25D366' },
     { icon: <BsTelephone size={30} />, label: 'Phone', value: '+917780123277', href: 'tel:+917780123277', color: '#0d6efd' },
-    { icon: <BsEnvelope size={30} />, label: 'Email', value: 'info@example.com', href: 'mailto:info@example.com', color: '#dc3545' },
+    { icon: <BsEnvelope size={30} />, label: 'Email', value: 'sainivasbeachviewresthouse@gmail.com', href: 'mailto:sainivasbeachviewresthouse@gmail.com', color: '#dc3545' },
   ];
 
   const cardVariants = {

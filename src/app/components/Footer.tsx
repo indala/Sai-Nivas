@@ -102,10 +102,10 @@ export default function Footer() {
               <li style={{ display: 'flex', alignItems: 'center' }}>
                 <FaEnvelope size={16} style={{ marginRight: '8px', color: '#20c997' }} />
                 <a
-                  href="mailto:sainivasguesthouse@gmail.com"
+                  href="mailto:sainivasbeachviewresthouse@gmail.com"
                   style={{ color: '#ddd', textDecoration: 'none' }}
                 >
-                  sainivasguesthouse@gmail.com
+                  sainivasbeachviewresthouse@gmail.com
                 </a>
               </li>
             </ul>
