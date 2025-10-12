@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://sainivas.co.in/sitemap.xml
