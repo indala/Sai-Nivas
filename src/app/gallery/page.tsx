@@ -1,62 +1,53 @@
-'use client';
-
-import { Container, Row, Col, Card } from 'react-bootstrap';
-import Image from 'next/image';
+// src/app/gallery/page.tsx
+import GalleryPage from './gallery';
 import { gallery } from '@/data/gallery';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import Lightbox from 'yet-another-react-lightbox';
-import 'yet-another-react-lightbox/styles.css';
+import { Metadata } from 'next';
 
-export default function GalleryPage() {
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [photoIndex, setPhotoIndex] = useState(0);
+// Generate OpenGraph images from gallery items
+const openGraphImages = gallery.map((item) => ({
+  url: item.src,
+  width: 1200,
+  height: 630,
+  alt: item.alt,
+}));
 
-  // Map gallery items to slides for Lightbox
-  const slides = gallery.map(item => ({ src: item.src, alt: item.alt }));
+export const metadata: Metadata = {
+  title: 'Gallery – Sai Nivas Beach View Rest House, RK Beach Vizag',
+  description:
+    'Explore the photo gallery of Sai Nivas Beach View Rest House. See cozy rooms, lobby, pool, and beachside ambiance near RK Beach, Visakhapatnam.',
+  keywords: [
+    'Sai Nivas Beach View Rest House',
+    'Gallery Vizag',
+    'Beach View Guest House Photos',
+    'Rooms and Beach Views Vizag',
+    'RK Beach Vizag',
+  ],
+  authors: [{ name: 'Sai Nivas Beach View Rest House' }],
+  alternates: {
+    canonical: 'https://sainivas.co.in/gallery',
+  },
+  openGraph: {
+    title: 'Gallery – Sai Nivas Beach View Rest House, RK Beach Vizag',
+    description:
+      'Explore the photo gallery of Sai Nivas Beach View Rest House. Cozy rooms, lobby, pool, and beachside ambiance near RK Beach, Visakhapatnam.',
+    url: 'https://sainivas.co.in/gallery',
+    siteName: 'Sai Nivas Beach View Rest House',
+    images: [
+      { url: '/og-image.png', width: 1200, height: 630, alt: 'Sai Nivas Beach View Rest House Gallery' },
+      ...openGraphImages,
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Gallery – Sai Nivas Beach View Rest House',
+    description:
+      'Browse the photo gallery of Sai Nivas Beach View Rest House near RK Beach, Visakhapatnam. Rooms, lobby, pool, and beach views.',
+    images: ['/og-image.png', ...gallery.map((item) => item.src)],
+  },
+};
 
-  return (
-    <Container className="py-5">
-      <h1 className="text-center mb-4">Gallery</h1>
-
-      <Row xs={1} sm={2} md={3} className="g-4">
-        {gallery.map((item, index) => (
-          <Col key={item.id}>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Card className="shadow-sm">
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  width={400}
-                  height={300}
-                  className="rounded"
-                  style={{
-                    width: '100%',
-                    
-                    objectFit: 'cover',
-                    cursor: 'pointer',
-                  }}
-                  onClick={() => {
-                    setPhotoIndex(index);
-                    setLightboxOpen(true);
-                  }}
-                />
-              </Card>
-            </motion.div>
-          </Col>
-        ))}
-      </Row>
-
-      {/* Lightbox */}
-      {lightboxOpen && (
-        <Lightbox
-          open={lightboxOpen}
-          index={photoIndex}
-          close={() => setLightboxOpen(false)}
-          slides={slides}
-          animation={{ fade: 200 }}
-        />
-      )}
-    </Container>
-  );
+export default function Page() {
+  return <GalleryPage />;
 }

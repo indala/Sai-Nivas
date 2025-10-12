@@ -1,105 +1,47 @@
-'use client';
+import ContactPage from './contact';
+import { Metadata } from 'next';
 
-import { Container, Row, Col, Card } from 'react-bootstrap';
-import EnquiryForm from '../components/EnquiryForm';
-import { BsWhatsapp, BsTelephone, BsEnvelope } from 'react-icons/bs';
-import { motion } from 'framer-motion';
-import MapSection from '../components/MapSection';
+export const metadata: Metadata = {
+  title: 'Contact Sai Nivas Beach View Rest House – RK Beach, Visakhapatnam',
+  description:
+    'Get in touch with Sai Nivas Beach View Rest House. Contact via WhatsApp, phone, or email, and visit us near RK Beach, Visakhapatnam.',
+  keywords: [
+    'Sai Nivas Beach View Rest House',
+    'Contact Guest House Vizag',
+    'RK Beach Guest House',
+    'Beach Stay Vizag',
+    'Guest House Contact',
+  ],
+  authors: [{ name: 'Sai Nivas Beach View Rest House' }],
+  alternates: {
+    canonical: 'https://sainivas.co.in/contact',
+  },
+  openGraph: {
+    title: 'Contact Sai Nivas Beach View Rest House – RK Beach, Visakhapatnam',
+    description:
+      'Reach out to Sai Nivas Beach View Rest House for bookings or inquiries. Contact via WhatsApp, phone, or email near RK Beach, Visakhapatnam.',
+    url: 'https://sainivas.co.in/contact',
+    siteName: 'Sai Nivas Beach View Rest House',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Contact Sai Nivas Beach View Rest House',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Sai Nivas Beach View Rest House – RK Beach, Visakhapatnam',
+    description:
+      'Contact Sai Nivas Beach View Rest House near RK Beach, Visakhapatnam. Reach out via WhatsApp, phone, or email.',
+    images: ['/og-image.png'],
+  },
+};
 
-export default function ContactPage() {
-  const contactCards = [
-    { icon: <BsWhatsapp size={30} />, label: 'WhatsApp', value: '+919553355118', href: 'https://wa.me/917780123277', color: '#25D366' },
-    { icon: <BsTelephone size={30} />, label: 'Phone', value: '+919553355118', href: 'tel:+917780123277', color: '#0d6efd' },
-    { icon: <BsEnvelope size={30} />, label: 'Email', value: 'sainivasbeachviewresthouse@gmail.com', href: 'mailto:sainivasbeachviewresthouse@gmail.com', color: '#dc3545' },
-  ];
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.2, duration: 0.5 } }),
-  };
-
-  const motionCard = {
-    whileHover: { scale: 1.02, boxShadow: '0 8px 20px rgba(0,0,0,0.15)' },
-    whileTap: { scale: 0.97 },
-  };
-
-  return (
-    <>
-      <Container className="py-5">
-        <h1 className="text-center mb-5">Contact Us</h1>
-
-        <Row className="align-items-start g-4">
-          {/* Left: Contact Info */}
-          <Col lg={5} md={12}>
-            {contactCards.map((card, i) => (
-              <motion.a
-                key={card.label}
-                href={card.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial="hidden"
-                animate="visible"
-                custom={i}
-                variants={cardVariants}
-                whileHover={motionCard.whileHover}
-                whileTap={motionCard.whileTap}
-                style={{ textDecoration: 'none', display: 'block' ,borderRadius: '10px', cursor: 'pointer'}}
-                className='shadow-sm m-2'
-              >
-                <Card
-                  className="p-3  d-flex align-items-center flex-row "
-                  style={{  }}
-                >
-                  {/* Icon */}
-                  <div
-                    style={{
-                      backgroundColor: card.color,
-                      width: 60,
-                      height: 60,
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#fff',
-                      marginRight: '1rem',
-                      flexShrink: 0,
-                    }}
-                  >
-                    {card.icon}
-                  </div>
-
-                  {/* Label + Value */}
-                  <div className='d-flex flex-column flex-grow-1 text-truncate'> 
-                    <h6 className="mb-1 text-truncate">{card.label}</h6>
-                    <span className='text-truncate' style={{ color: '#333', fontWeight: 500}}>{card.value}</span>
-                  </div>
-                </Card>
-              </motion.a>
-            ))}
-          </Col>
-
-          {/* Right: Contact Form */}
-          <Col lg={7} md={12}>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <EnquiryForm />
-            </motion.div>
-          </Col>
-        </Row>
-      </Container>
-
-      {/* Map Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <MapSection />
-      </motion.div>
-    </>
-  );
+export default function Page() {
+  return <ContactPage />;
 }
