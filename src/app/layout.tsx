@@ -10,7 +10,12 @@ import { Metadata } from 'next';
 import { Viewport } from 'next';
 
 export const viewport: Viewport = {
-  themeColor: '#f5c542',
+  width: 'device-width',
+  initialScale: 1,
+  minimumScale: 1,
+  maximumScale: 1,
+  userScalable: true,
+  themeColor: '#f5c542', // theme color here
 };
 
 
