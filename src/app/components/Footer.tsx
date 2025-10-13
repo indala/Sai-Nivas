@@ -112,7 +112,7 @@ export default function Footer() {
 
             {/* Social Icons */}
             <div className="mt-3" style={{ display: 'flex', gap: '1rem' }}>
-              <a href="" aria-label="Facebook" target="_blank" rel="noopener noreferrer" style={{ transition: 'color 0.3s ease' }}>
+              <a href="https://www.facebook.com/share/1NhAmUqWqB/" aria-label="Facebook" target="_blank" rel="noopener noreferrer" style={{ transition: 'color 0.3s ease' }}>
                 <FaFacebook color="#20c997" size={22} className="hover-green" />
               </a>
               <a href="https://www.instagram.com/sai_nivas_rest_house/" aria-label="Instagram" target="_blank" rel="noopener noreferrer" style={{ transition: 'color 0.3s ease' }}>
@@ -133,7 +133,7 @@ export default function Footer() {
           style={{ fontSize: '0.9rem', color: '#aaa' }}
         >
           © {new Date().getFullYear()} SaiNivas Rest House. All rights reserved. <br />
-          Designed by <a href="https://awezens.com" target="_blank" rel="noopener noreferrer" style={{ color: '#20c997',textDecoration: 'none'  }}>Awezens</a>
+          Developed by <a href="https://awezens.com" target="_blank" rel="noopener noreferrer" style={{ color: '#20c997',textDecoration: 'none'  }}>Awezens</a>
         </motion.div>
       </Container>
 

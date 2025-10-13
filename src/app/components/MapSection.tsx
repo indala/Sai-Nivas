@@ -16,7 +16,7 @@ export default function MapSection() {
       <Container fluid className="p-0">
         <div style={{ height: '400px', position: 'relative' }}>
           <iframe
-            title="Sai Nivas Guest House Location on Google Maps"
+            title="SaiNivas Guest House Location on Google Maps"
             src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3800.7739414768134!2d83.31255100000001!3d17.708136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQyJzI5LjMiTiA4M8KwMTgnNDUuMiJF!5e0!3m2!1sen!2sin!4v1760332220368!5m2!1sen!2sin"
             width="100%"
             height="100%"

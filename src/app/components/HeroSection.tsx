@@ -22,7 +22,7 @@ export default function HeroSection() {
     <section
       style={{
         position: 'relative',
-        backgroundImage: 'url(/images/room1.webp)', // Add a sea-view or balcony image
+        backgroundImage: 'url(/images/hero.webp)', // Add a sea-view or balcony image
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         minHeight: '90vh',
