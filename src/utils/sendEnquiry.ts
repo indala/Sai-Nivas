@@ -15,7 +15,7 @@ export function sendEnquiry(data: EnquiryData) {
   const { name, contact, message, room } = data;
 
   // Replace with your WhatsApp number (international format, no + or 00)
-  const whatsappNumber = '917780123277';
+  const whatsappNumber = '919553355118';
 
   // Build the WhatsApp message
   const whatsappMessage = `
