@@ -39,7 +39,7 @@ export default function AppNavbar() {
         <Navbar expanded={expanded} expand="lg" bg="light" fixed="top" className="shadow-sm">
           <Container>
             <Navbar.Brand as={Link} href="/" className="fw-bold fs-4">
-              GuestHouse
+              SaiNivas Rest House
             </Navbar.Brand>
 
             <Navbar.Toggle

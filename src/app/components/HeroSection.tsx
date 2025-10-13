@@ -69,7 +69,7 @@ export default function HeroSection() {
           transition={{ delay: 0.3 }}
           style={{ textShadow: '0 2px 10px rgba(0,0,0,0.4)' }}
         >
-          Welcome to Sai Nivas Beach View Rest House
+          Welcome to SaiNivas Beach View Rest House
         </motion.h1>
 
         {/* Subheading */}

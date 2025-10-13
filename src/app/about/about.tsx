@@ -9,7 +9,7 @@ import { BsHouseDoorFill, BsFillPeopleFill, BsStarFill } from 'react-icons/bs';
 export default function AboutPage() {
   const features = [
     { icon: <BsHouseDoorFill size={30} />, title: 'Sea View Rooms', description: 'Enjoy stunning views of the seashore from our 5th floor rooms.' },
-    { icon: <BsFillPeopleFill size={30} />, title: 'Warm Hospitality', description: 'Our team ensures a comfortable and memorable stay for all guests.' },
+    { icon: <BsFillPeopleFill size={30} />, title: 'Warm Hospitality', description: 'Our team ensures a comfortable and memorable stay for all Rests.' },
     { icon: <BsStarFill size={30} />, title: 'Modern Amenities', description: 'Equipped with everything you need for a relaxing stay near the beach.' },
   ];
 
@@ -27,7 +27,7 @@ export default function AboutPage() {
         transition={{ duration: 0.6 }}
         className="text-center mb-5"
       >
-        <h1>Sai Nivas Guest House</h1>
+        <h1>SaiNivas Rest House</h1>
         <p className="text-muted fs-5">
           A serene stay on the 5th floor, just steps away from the seashore. Relax, unwind, and enjoy the coastal breeze.
         </p>
@@ -44,20 +44,20 @@ export default function AboutPage() {
           >
             <h3>Our Story</h3>
             <p>
-              Sai Nivas Guest House is located on the 5th floor of a beautiful apartment near the seashore, offering guests
+              SaiNivas Rest House is located on the 5th floor of a beautiful apartment near the seashore, offering Rests
               breathtaking views of the ocean. Our aim is to provide a comfortable and tranquil escape for travelers who
               want to enjoy the seaside while staying close to the city’s conveniences.
             </p>
             <p>
-              With a focus on warm hospitality and modern amenities, we ensure every guest has a relaxing and memorable
-              stay. Whether it’s a weekend getaway or an extended holiday, Sai Nivas Guest House is your perfect seaside retreat.
+              With a focus on warm hospitality and modern amenities, we ensure every Rest has a relaxing and memorable
+              stay. Whether it’s a weekend getaway or an extended holiday, SaiNivas Rest House is your perfect seaside retreat.
             </p>
           </motion.div>
         </Col>
         <Col md={6}>
           <motion.img
-            src="/images/seashore-guesthouse.png" // Replace with your actual image
-            alt="Sai Nivas Guest House"
+            src="/images/seashore-Resthouse.png" // Replace with your actual image
+            alt="SaiNivas Rest House"
             className="img-fluid rounded shadow"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

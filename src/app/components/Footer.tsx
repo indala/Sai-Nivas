@@ -26,7 +26,7 @@ export default function Footer() {
           {/* About Section */}
           <Col md={4}>
             <h5 style={{ color: '#20c997', fontWeight: 600 }}>
-              Sai Nivas Guest House
+              SaiNivas Rest House
             </h5>
             <p style={{ fontSize: '0.95rem', marginTop: '0.8rem', color: '#ddd' }}>
               A peaceful seaside retreat located on the 5th floor overlooking the
@@ -83,7 +83,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   style={{ color: '#ddd', textDecoration: 'none' }}
                 >
-                  Near Seashore, 5th Floor Apartment
+                  Vintage Bar Backside, 5th Floor RK Residency
                 </a>
               </li>
 
@@ -132,8 +132,8 @@ export default function Footer() {
           className="text-center"
           style={{ fontSize: '0.9rem', color: '#aaa' }}
         >
-          © {new Date().getFullYear()} Sai Nivas Guest House. All rights reserved. <br />
-          Designed with ❤️ by <span style={{ color: '#20c997' }}>Awezens</span>
+          © {new Date().getFullYear()} SaiNivas Rest House. All rights reserved. <br />
+          Designed by <a href="https://awezens.com" target="_blank" rel="noopener noreferrer" style={{ color: '#20c997',textDecoration: 'none'  }}>Awezens</a>
         </motion.div>
       </Container>
 

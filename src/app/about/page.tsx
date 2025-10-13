@@ -2,31 +2,31 @@
 import AboutPage from "./about";
 
 export const metadata = {
-  title: 'About Sai Nivas Beach View Rest House – Your Beachside Retreat',
+  title: 'About SaiNivas Beach View Rest House – Your Beachside Retreat',
   description:
-    'Discover Sai Nivas Beach View Rest House: our story, hospitality values, and what makes us special near RK Beach, Visakhapatnam. A peaceful seaside retreat awaits.',
+    'Discover SaiNivas Beach View Rest House: our story, hospitality values, and what makes us special near RK Beach, Visakhapatnam. A peaceful seaside retreat awaits.',
   keywords: [
-    'Sai Nivas Beach View Rest House',
-    'About Guest House Visakhapatnam',
+    'SaiNivas Beach View Rest House',
+    'About Rest House Visakhapatnam',
     'Beach Stay Vizag',
-    'RK Beach Guest House',
+    'RK Beach Rest House',
   ],
-  authors: [{ name: 'Sai Nivas Beach View Rest House' }],
+  authors: [{ name: 'SaiNivas Beach View Rest House' }],
   alternates: {
     canonical: 'https://sainivas.co.in/about',
   },
   openGraph: {
-    title: 'About Sai Nivas Beach View Rest House – Your Beachside Retreat',
+    title: 'About SaiNivas Beach View Rest House – Your Beachside Retreat',
     description:
-      'Discover Sai Nivas Beach View Rest House: our story, hospitality values, and what makes us special near RK Beach, Visakhapatnam.',
+      'Discover SaiNivas Beach View Rest House: our story, hospitality values, and what makes us special near RK Beach, Visakhapatnam.',
     url: 'https://sainivas.co.in/about',
-    siteName: 'Sai Nivas Beach View Rest House',
+    siteName: 'SaiNivas Beach View Rest House',
     images: [
       {
         url: 'https://sainivas.co.in/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Sai Nivas Beach View Rest House – About',
+        alt: 'SaiNivas Beach View Rest House – About',
       },
     ],
     locale: 'en_IN',
@@ -34,9 +34,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Sai Nivas Beach View Rest House – Your Beachside Retreat',
+    title: 'About SaiNivas Beach View Rest House – Your Beachside Retreat',
     description:
-      'Discover Sai Nivas Beach View Rest House near RK Beach, Visakhapatnam. Learn our story and values for a peaceful stay.',
+      'Discover SaiNivas Beach View Rest House near RK Beach, Visakhapatnam. Learn our story and values for a peaceful stay.',
     images: ['https://sainivas.co.in/og-image.png'],
   },
 };

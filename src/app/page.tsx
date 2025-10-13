@@ -7,22 +7,22 @@ import MapSection from './components/MapSection';
 
 
 export const metadata = {
-  title: "Sai Nivas Guest House – Beach View",
-  description: "Stay at Sai Nivas Guest House near the sea shore with comfortable rooms and scenic views.",
-  keywords: "Sai Nivas, Guest House, Beach Stay, Rooms, Near Sea, Beach View",
-  authors: [{ name: "Sai Nivas Guest House" }],
+  title: "SaiNivas Rest House – Beach View",
+  description: "Stay at SaiNivas Rest House near the sea shore with comfortable rooms and scenic views.",
+  keywords: "SaiNivas, Rest House, Beach Stay, Rooms, Near Sea, Beach View",
+  authors: [{ name: "SaiNivas Rest House" }],
   openGraph: {
-    title: "Sai Nivas Guest House – Beach View",
-    description: "Stay at Sai Nivas Guest House near the sea shore with comfortable rooms and scenic views.",
+    title: "SaiNivas Rest House – Beach View",
+    description: "Stay at SaiNivas Rest House near the sea shore with comfortable rooms and scenic views.",
     url: "https://sainivas.co.in",
-    siteName: "Sai Nivas Guest House",
+    siteName: "SaiNivas Rest House",
     images: ["/og-image.jpg"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sai Nivas Guest House – Beach View",
-    description: "Stay at Sai Nivas Guest House near the sea shore with comfortable rooms and scenic views.",
+    title: "SaiNivas Rest House – Beach View",
+    description: "Stay at SaiNivas Rest House near the sea shore with comfortable rooms and scenic views.",
     images: ["/og-image.jpg"],
   },
 };

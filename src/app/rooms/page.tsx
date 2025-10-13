@@ -2,32 +2,32 @@
 import RoomsPage from "./rooms";
 
 export const metadata = {
-  title: 'Rooms at Sai Nivas Beach View Rest House – Comfort & Ocean Views',
+  title: 'Rooms at SaiNivas Beach View Rest House – Comfort & Ocean Views',
   description:
-    'Explore our well-appointed rooms at Sai Nivas Beach View Rest House. Cozy interiors, AC rooms, sea views, and ideal for couples or families near RK Beach, Visakhapatnam.',
+    'Explore our well-appointed rooms at SaiNivas Beach View Rest House. Cozy interiors, AC rooms, sea views, and ideal for couples or families near RK Beach, Visakhapatnam.',
   keywords: [
-    'Sai Nivas Beach View Rest House',
+    'SaiNivas Beach View Rest House',
     'Rooms near RK Beach Vizag',
     'Sea View Rooms Visakhapatnam',
-    'Guest House Rooms Vizag',
+    'Rest House Rooms Vizag',
     'Beach Stay Vizag',
   ],
-  authors: [{ name: 'Sai Nivas Beach View Rest House' }],
+  authors: [{ name: 'SaiNivas Beach View Rest House' }],
   alternates: {
     canonical: 'https://sainivas.co.in/rooms',
   },
   openGraph: {
-    title: 'Rooms at Sai Nivas Beach View Rest House – Comfort & Ocean Views',
+    title: 'Rooms at SaiNivas Beach View Rest House – Comfort & Ocean Views',
     description:
-      'Explore our well-appointed rooms at Sai Nivas Beach View Rest House. Cozy interiors, AC rooms, and sea views near RK Beach, Visakhapatnam.',
+      'Explore our well-appointed rooms at SaiNivas Beach View Rest House. Cozy interiors, AC rooms, and sea views near RK Beach, Visakhapatnam.',
     url: 'https://sainivas.co.in/rooms',
-    siteName: 'Sai Nivas Beach View Rest House',
+    siteName: 'SaiNivas Beach View Rest House',
     images: [
       {
         url: '/og-image.png', // main OG image
         width: 1200,
         height: 630,
-        alt: 'Sai Nivas Beach View Rest House – Rooms Overview',
+        alt: 'SaiNivas Beach View Rest House – Rooms Overview',
       },
       {
         url: '/images/room1.webp',
@@ -65,9 +65,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Rooms at Sai Nivas Beach View Rest House – Comfort & Ocean Views',
+    title: 'Rooms at SaiNivas Beach View Rest House – Comfort & Ocean Views',
     description:
-      'Book cozy rooms with sea views at Sai Nivas Beach View Rest House near RK Beach, Visakhapatnam. Ideal for couples and families.',
+      'Book cozy rooms with sea views at SaiNivas Beach View Rest House near RK Beach, Visakhapatnam. Ideal for couples and families.',
     images: [
       '/og-image.png',
       '/images/room1.webp',

@@ -14,7 +14,7 @@ export default function AboutSection() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        About Sai Nivas
+        About SaiNivas
       </motion.h2>
       <motion.p
         className="lead"
@@ -23,7 +23,7 @@ export default function AboutSection() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        Situated near the sea shore, Sai Nivas Guest House offers cozy and affordable stays 
+        Situated near the sea shore, SaiNivas Rest House offers cozy and affordable stays 
         with stunning ocean views. Our peaceful location and friendly service make it perfect 
         for families, travelers, and professionals alike.
       </motion.p>

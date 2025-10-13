@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: RoomPageProps): Promise<Metad
  // ... (rest of generateMetadata function remains the same)
  if (!room) {
   return {
-   title: 'Room Not Found – Sai Nivas Beach View Rest House',
+   title: 'Room Not Found – SaiNivas Beach View Rest House',
    description:
     'The room you are looking for does not exist. Please browse our available rooms.',
    alternates: {
@@ -30,24 +30,24 @@ export async function generateMetadata({ params }: RoomPageProps): Promise<Metad
 
  return {
   // ... (rest of the return object remains the same)
-  title: `${room.title} – Sai Nivas Beach View Rest House, RK Beach Vizag`,
+  title: `${room.title} – SaiNivas Beach View Rest House, RK Beach Vizag`,
   description: room.description,
   keywords: [
-   'Sai Nivas Beach View Rest House',
+   'SaiNivas Beach View Rest House',
    room.title,
    `${room.bedType} Room Vizag`,
    'Rooms near RK Beach',
    'Beach Stay Vizag',
   ],
-  authors: [{ name: 'Sai Nivas Beach View Rest House' }],
+  authors: [{ name: 'SaiNivas Beach View Rest House' }],
   alternates: {
    canonical: `https://sainivas.co.in/rooms/${room.id}`,
   },
   openGraph: {
-   title: `${room.title} – Sai Nivas Beach View Rest House`,
+   title: `${room.title} – SaiNivas Beach View Rest House`,
    description: room.description,
    url: `https://sainivas.co.in/rooms/${room.id}`,
-   siteName: 'Sai Nivas Beach View Rest House',
+   siteName: 'SaiNivas Beach View Rest House',
    images: [
     {
      url: room.image,
@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: RoomPageProps): Promise<Metad
      url: '/og-image.png',
      width: 1200,
      height: 630,
-     alt: 'Sai Nivas Beach View Rest House – Rooms Overview',
+     alt: 'SaiNivas Beach View Rest House – Rooms Overview',
     },
    ],
    locale: 'en_IN',
@@ -67,7 +67,7 @@ export async function generateMetadata({ params }: RoomPageProps): Promise<Metad
   },
   twitter: {
    card: 'summary_large_image',
-   title: `${room.title} – Sai Nivas Beach View Rest House`,
+   title: `${room.title} – SaiNivas Beach View Rest House`,
    description: room.description,
    images: [room.image, '/og-image.png'],
   },
