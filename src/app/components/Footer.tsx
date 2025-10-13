@@ -78,7 +78,7 @@ export default function Footer() {
               <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                 <HiLocationMarker size={18} style={{ marginRight: '8px', color: '#20c997' }} />
                 <a
-                  href="https://www.google.com/maps?q=Near+Seashore,+5th+Floor+Apartment"
+                  href="https://maps.app.goo.gl/gAA9hG2WkFRWpDX47"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: '#ddd', textDecoration: 'none' }}
@@ -133,7 +133,7 @@ export default function Footer() {
           style={{ fontSize: '0.9rem', color: '#aaa' }}
         >
           © {new Date().getFullYear()} Sai Nivas Guest House. All rights reserved. <br />
-          Designed with ❤️ by <span style={{ color: '#20c997' }}>Mohan Kumar Indala</span>
+          Designed with ❤️ by <span style={{ color: '#20c997' }}>Awezens</span>
         </motion.div>
       </Container>
 
