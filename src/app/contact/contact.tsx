@@ -8,8 +8,8 @@ import MapSection from '../components/MapSection';
 
 export default function ContactPage() {
   const contactCards = [
-    { icon: <BsWhatsapp size={30} />, label: 'WhatsApp', value: '+919553355118', href: 'https://wa.me/917780123277', color: '#25D366' },
-    { icon: <BsTelephone size={30} />, label: 'Phone', value: '+919553355118', href: 'tel:+917780123277', color: '#0d6efd' },
+    { icon: <BsWhatsapp size={30} />, label: 'WhatsApp', value: '+919553355118', href: 'https://wa.me/919553355118', color: '#25D366' },
+    { icon: <BsTelephone size={30} />, label: 'Phone', value: '+919553355118', href: 'tel:+919553355118', color: '#0d6efd' },
     { icon: <BsEnvelope size={30} />, label: 'Email', value: 'sainivasbeachviewresthouse@gmail.com', href: 'mailto:sainivasbeachviewresthouse@gmail.com', color: '#dc3545' },
   ];
 
