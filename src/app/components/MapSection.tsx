@@ -36,7 +36,7 @@ export default function MapSection() {
               display: 'flex',
               alignItems: 'center',
             }}
-          >a
+          >
             <FaMapMarkerAlt className="text-success me-2" />
             <a  href="https://maps.app.goo.gl/gAA9hG2WkFRWpDX47" target="_blank" rel="noopener noreferrer" style={{ color: 'black', textDecoration: 'none' }}>SaiNivas Rest House,vintage Bar Backside</a>
           </div>

@@ -25,7 +25,7 @@ const reviews = [
 export default function Testimonials() {
   return (
     <div className="py-5 text-center position-relative">
-      <h2 className="fw-bold mb-4">What Our Rests Say</h2>
+      <h2 className="fw-bold mb-4">What Our Customer Say</h2>
       <Carousel
         fade
         indicators={false}
