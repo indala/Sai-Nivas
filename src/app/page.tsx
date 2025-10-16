@@ -33,7 +33,7 @@ export const metadata = {
 export default function Home() {
   return (
     
-    <div style={{ fontFamily: 'Poppins, sans-serif' }} className='mt-3c'>
+    <div style={{ fontFamily: 'Poppins, sans-serif' }} className='mt-3'>
       <HeroSection />
       <AboutSection />
       <AmenitiesSection />

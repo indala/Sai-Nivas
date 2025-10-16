@@ -73,7 +73,7 @@ export default function RoomDetailsClient({ room }: Props) {
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.9, ease: 'easeOut' }}
-          style={{ position: 'relative', width: '100%', height: '400px' }}
+          style={{ position: 'relative', width: '100%', height: '450px' }}
         >
           <Image src={room.image} alt={room.title} fill style={{ objectFit: 'cover' }} priority />
           <div
